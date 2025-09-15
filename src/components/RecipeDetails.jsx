@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 function RecipeDetails() {
   const { id } = useParams();
@@ -7,15 +9,20 @@ function RecipeDetails() {
     "https://json-api.uz/api/project/recipes/recipes"
   );
 
-  const {
-    data: moreData,
-    loading: moreLoading,
-    error: moreError,
-  } = useFetch("https://json-api.uz/api/project/recipes/recipes?limit=4");
+  const { data: moreData } = useFetch(
+    "https://json-api.uz/api/project/recipes/recipes?limit=4"
+  );
 
-  console.log(moreData);
+  const [recipe, setRecipe] = useState(null);
 
-  if (loading)
+  useEffect(() => {
+    if (data?.data) {
+      const found = data.data.find((item) => item.id === Number(id));
+      setRecipe(found);
+    }
+  }, [id, data]);
+
+  if (loading || !recipe)
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="flex items-center gap-3 text-neutral-700 text-lg font-semibold">
@@ -53,10 +60,8 @@ function RecipeDetails() {
       </div>
     );
 
-  const recipe = data?.data?.find((item) => item.id === Number(id));
-
   if (!recipe) return <p className="text-center py-20">Recipe not found</p>;
-  console.log(recipe.image.large);
+
   return (
     <div className="py-10">
       <div className="mb-16 border-b border-b-neutral-300">
@@ -173,7 +178,7 @@ function RecipeDetails() {
                   </p>
 
                   <div className="flex mb-4 gap-x-4">
-                    <div className="flex flex-col  sm:flex-row lg:flex-col gap-4 lg:gap-0">
+                    <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:gap-0">
                       <div className="flex gap-2">
                         <img
                           src="../assets/images/icon-servings.svg"
@@ -208,9 +213,11 @@ function RecipeDetails() {
                     </div>
                   </div>
 
-                  <button className="bg-neutral-900 text-white px-4 py-2 w-full rounded-full font-bold hover:bg-neutral-800">
-                    View Recipe
-                  </button>
+                  <Link to={`/recipe/${item.id}`}>
+                    <button className="bg-neutral-900 text-white px-4 py-2 w-full rounded-full font-bold hover:bg-neutral-800">
+                      View Recipe
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
