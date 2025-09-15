@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.nunito__sans {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #395852;
+}
+
+.recipe__meta {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #163a34;
+}
