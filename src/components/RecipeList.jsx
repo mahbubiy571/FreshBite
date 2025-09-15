@@ -8,7 +8,7 @@ function RecipeList() {
 
   if (loading)
     return (
-      <div className="flex justify-center items-center py-28">
+      <div className="flex justify-center items-center min-h-screen">
         <div className="flex items-center gap-3 text-neutral-700 text-lg font-semibold">
           <svg
             className="animate-spin h-6 w-6 text-neutral-900"
