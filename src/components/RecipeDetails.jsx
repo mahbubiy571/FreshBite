@@ -63,7 +63,7 @@ function RecipeDetails() {
   if (!recipe) return <p className="text-center py-20">Recipe not found</p>;
 
   return (
-    <div className="py-10">
+    <div className="py-10 max-w-[1700px] mx-auto relative overflow-hidden">
       <div className="mb-16 border-b border-b-neutral-300">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-8 lg:px-[124px]">
           <div>
