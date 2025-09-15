@@ -98,8 +98,8 @@ function RecipeDetails() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {moreData?.data
-          ?.filter((item) => item.id !== recipe.id) // hozirgi recipeni chiqaramiz
-          .slice(0, 3) // faqat 3 ta retsept olamiz
+          ?.filter((item) => item.id !== recipe.id)
+          .slice(0, 3)
           .map((item) => (
             <div
               key={item.id}
@@ -108,6 +108,9 @@ function RecipeDetails() {
               <img
                 src={`/assets/images/${item.slug}-large.webp`}
                 alt={item.title}
+                onError={(e) => {
+                  e.target.src = "/assets/images/fallback.webp";
+                }}
                 className="w-full h-[220px] object-cover rounded-xl"
               />
               <div className="p-4">
