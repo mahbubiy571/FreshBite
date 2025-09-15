@@ -130,7 +130,7 @@ function RecipeDetails() {
             </ol>
 
             <h2 className="text-2xl font-bold mb-4">Instructions:</h2>
-            <ol className="nunito__sans mb-16 space-y-2">
+            <ol className="nunito__sans mb-12 lg:mb-16 space-y-2">
               {recipe.instructions?.map((step, index) => (
                 <li key={index}>
                   <div className="flex items-start gap-5">
@@ -167,7 +167,7 @@ function RecipeDetails() {
                     "/assets/images"
                   )}
                   alt={item.title}
-                  className="w-full h-[360px] object-cover rounded-xl mb-2"
+                  className="w-full h-[300px] sm:h-[450px] lg:h-[360px] object-cover rounded-xl mb-2"
                 />
                 <div className="p-2">
                   <h3 className="font-bold text-[20px] text-neutral-900 mb-2.5 leading-[140%] line-clamp-1">
