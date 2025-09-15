@@ -168,7 +168,9 @@ function RecipeDetails() {
                   <h3 className="font-bold text-[20px] text-neutral-900 mb-2.5 leading-[140%] line-clamp-1">
                     {item.title}
                   </h3>
-                  <p className="nunito__sans mb-4">{item.overview}</p>
+                  <p className="nunito__sans mb-4 line-clamp-2">
+                    {item.overview}
+                  </p>
 
                   <div className="flex mb-4 gap-x-4">
                     <div className="flex flex-col  sm:flex-row lg:flex-col gap-4 lg:gap-0">
