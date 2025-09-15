@@ -62,7 +62,7 @@ function RecipeDetails() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Image */}
         <img
-          src={`/assets/images/${recipe.slug}-large.webp`}
+          src={recipe.image.large.replace("./", "/")}
           alt={recipe.title}
           className="w-full h-[400px] object-cover rounded-xl"
         />
@@ -106,11 +106,11 @@ function RecipeDetails() {
               className="bg-white p-2 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
               <img
-                src={`/assets/images/${item.slug}-large.webp`}
+                src={item.image.large.replace(
+                  "./assets/images",
+                  "/assets/images"
+                )}
                 alt={item.title}
-                onError={(e) => {
-                  e.target.src = "/assets/images/fallback.webp";
-                }}
                 className="w-full h-[220px] object-cover rounded-xl"
               />
               <div className="p-4">
