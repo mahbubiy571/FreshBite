@@ -61,7 +61,6 @@ function RecipeDetails() {
     <div className="py-10">
       <div className="mb-16 border-b border-b-neutral-300">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-8 lg:px-[124px]">
-          {/* Image */}
           <div>
             <h4 className="font-semibold text-[18px] leading-[150%] mb-4">
               Mediterranean Chickpea Salad
@@ -72,7 +71,6 @@ function RecipeDetails() {
               className="w-full h-[400px] object-cover rounded-xl"
             />
           </div>
-          {/* Content */}
           <div>
             <h1 className="text-5xl font-extrabold text-neutral-900 mb-5 mt-10">
               {recipe.title}
@@ -172,7 +170,6 @@ function RecipeDetails() {
                   </h3>
                   <p className="nunito__sans mb-4">{item.overview}</p>
 
-                  {/* Servings / Prep / Cook info for this item */}
                   <div className="flex mb-4 gap-x-4">
                     <div className="flex flex-col  sm:flex-row lg:flex-col gap-4 lg:gap-0">
                       <div className="flex gap-2">
