@@ -61,36 +61,83 @@ function RecipeDetails() {
     <div className="px-4 sm:px-8 lg:px-[124px] py-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Image */}
-        <img
-          src={recipe.image.large.replace("./", "/")}
-          alt={recipe.title}
-          className="w-full h-[400px] object-cover rounded-xl"
-        />
-
+        <div>
+          <h4 className="font-semibold text-[18px] leading-[150%] mb-4">
+            Mediterranean Chickpea Salad
+          </h4>
+          <img
+            src={recipe.image.large.replace("./", "/")}
+            alt={recipe.title}
+            className="w-full h-[400px] object-cover rounded-xl"
+          />
+        </div>
         {/* Content */}
         <div>
-          <h1 className="text-3xl font-bold text-neutral-900 mb-4">
+          <h1 className="text-5xl font-extrabold text-neutral-900 mb-5 mt-10">
             {recipe.title}
           </h1>
-          <p className="text-neutral-700 mb-6">{recipe.overview}</p>
+          <p className="nunito__sans mb-5">{recipe.overview}</p>
 
-          <div className="flex flex-wrap gap-6 mb-6 text-sm text-neutral-800">
-            <span>👥 {recipe.servings} servings</span>
-            <span>⏱ Prep {recipe.prepMinutes} min</span>
-            <span>🔥 Cook {recipe.cookMinutes} min</span>
+          <div className="flex flex-wrap gap-6 mb-5 text-sm text-neutral-800">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <img
+                  src="../assets/images/icon-servings.svg"
+                  alt="Servings"
+                  className="w-5 h-5"
+                />
+                <span className="text-sm">{recipe.servings} servings</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <img
+                  src="../assets/images/icon-prep-time.svg"
+                  alt="Prep time"
+                  className="w-5 h-5"
+                />
+                <span className="text-sm">Prep {recipe.prepMinutes} min</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <img
+                src="../assets/images/icon-cook-time.svg"
+                alt="Cook time"
+                className="w-5 h-5"
+              />
+              <span className="text-sm">Cook {recipe.cookMinutes} min</span>
+            </div>
           </div>
 
-          <h2 className="text-xl font-semibold mb-3">Ingredients:</h2>
-          <ul className="list-disc pl-6 mb-6 space-y-2">
+          <h2 className="text-2xl font-bold mb-4">Ingredients:</h2>
+          <ol className="nunito__sans mb-5 space-y-2">
             {recipe.ingredients?.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}>
+                <div className="flex items-start gap-5">
+                  <img
+                    src="../assets/images/icon-bullet-point.svg"
+                    alt="Bullet point icon"
+                    className="w-8 h-8"
+                  />
+                  <p>{item}</p>
+                </div>
+              </li>
             ))}
-          </ul>
+          </ol>
 
-          <h2 className="text-xl font-semibold mb-3">Instructions:</h2>
-          <ol className="list-decimal pl-6 space-y-2">
+          <h2 className="text-2xl font-bold mb-4">Instructions:</h2>
+          <ol className="nunito__sans mb-5 space-y-2">
             {recipe.instructions?.map((step, index) => (
-              <li key={index}>{step}</li>
+              <li key={index}>
+                <div className="flex items-start gap-5">
+                  <img
+                    src="../assets/images/icon-bullet-point.svg"
+                    alt="Bullet point icon"
+                    className="w-8 h-8"
+                  />
+                  <p>{step}</p>
+                </div>
+              </li>
             ))}
           </ol>
         </div>
