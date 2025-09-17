@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,14 +61,16 @@ function Navbar() {
         </div>
 
         <div className="navbar-end hidden md:flex">
-          <button
-            className="w-[167px] h-[52px] rounded-[10px] bg-neutral-900 
+          <Link to="/recipes">
+            <button
+              className="w-[167px] h-[52px] rounded-[10px] bg-neutral-900 
              hover:bg-neutral-800 hover:transition-normal 
              text-white font-bold leading-[140%] text-[19px] px-4 py-3
               focus-visible:outline-[2px] focus-visible:outline-neutral-900 focus-visible:outline-offset-3"
-          >
-            Browse recipes
-          </button>
+            >
+              Browse recipes
+            </button>
+          </Link>
         </div>
 
         <div className="md:hidden navbar-end">

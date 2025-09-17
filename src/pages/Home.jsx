@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <main className="bg-neutral-100">
@@ -142,14 +144,16 @@ function Home() {
                 Hit the button, pick a recipe, and get dinner on the table —
                 fast.
               </p>
-              <button
-                className="w-[176px] h-[57px] rounded-[10px] bg-neutral-900 
+              <Link to="/recipes">
+                <button
+                  className="w-[176px] h-[57px] rounded-[10px] bg-neutral-900 
              hover:bg-neutral-800 hover:transition-normal 
              text-white font-bold leading-[140%] text-[18px] px-4 py-3
               focus-visible:outline-[2px] focus-visible:outline-neutral-900 focus-visible:outline-offset-3"
-              >
-                Browse recipes
-              </button>
+                >
+                  Browse recipes
+                </button>
+              </Link>
             </div>
           </div>
         </section>
